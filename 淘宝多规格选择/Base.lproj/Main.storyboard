@@ -25,15 +25,26 @@
                                     <action selector="buyTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4e6-ey-SjE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdA-lf-gsb">
+                                <rect key="frame" x="166.5" y="385" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="KdA-lf-gsb" firstAttribute="centerX" secondItem="oCe-jS-hwt" secondAttribute="centerX" id="HKT-Hj-zAp"/>
+                            <constraint firstItem="KdA-lf-gsb" firstAttribute="top" secondItem="oCe-jS-hwt" secondAttribute="bottom" constant="36.5" id="N0Q-Pv-WRq"/>
                             <constraint firstItem="oCe-jS-hwt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="USa-cU-PcT"/>
                             <constraint firstItem="oCe-jS-hwt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dxY-mI-INj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="9Gt-SG-jjh"/>
+                    <connections>
+                        <outlet property="desLable" destination="KdA-lf-gsb" id="fmt-dA-gju"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

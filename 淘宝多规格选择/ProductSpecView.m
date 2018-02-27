@@ -141,37 +141,48 @@
 
 - (void)show {
     [[UIApplication sharedApplication].keyWindow addSubview:self];
-    self.constraint.constant = self.frame.size.width * 1.2;
+    self.bottomView.center = CGPointMake(self.bottomView.center.x, self.bottomView.center.y + self.bottomView.bounds.size.height);
     [UIView animateWithDuration:0.3 animations:^{
-        self.constraint.constant = 0;
-        [self layoutIfNeeded];
+        self.bottomView.center = CGPointMake(self.bottomView.center.x, self.bottomView.center.y - self.bottomView.bounds.size.height);
     }];
 }
 
 - (void)dismiss {
     [UIView animateWithDuration:0.3 animations:^{
         self.alpha = 0.1;
-        self.constraint.constant = self.frame.size.width * 1.2;
-        [self layoutIfNeeded];
+        self.bottomView.center = CGPointMake(self.bottomView.center.x, self.bottomView.center.y + self.bottomView.bounds.size.height);
     }completion:^(BOOL finished) {
         self.alpha = 1;
         [self removeFromSuperview];
     }];
 }
 
+/*
+ 取消
+ */
 - (IBAction)cancleTaped:(id)sender {
     [self dismiss];
 }
 
+/*
+ 确定点击
+ */
 - (IBAction)sureTaped:(id)sender {
     isTouch = YES;
+    NSMutableArray *nameArray = [NSMutableArray array];
     for (SpecModel *model in self.specArray) {
         if (model.selRow == 999) {
             [self.collectionView reloadData];
             return;
+        }else {
+            [nameArray addObject:model.list[model.selRow].name];
         }
     }
-    NSLog(@"已选择");
+    NSString *nameString = [nameArray componentsJoinedByString:@","];
+    if (self.valueBlock) {
+        self.valueBlock(nameString);
+    }
+    [self dismiss];
 }
 
 @end

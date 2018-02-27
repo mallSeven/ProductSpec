@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) ProductSpecView *specView;
 @property (nonatomic, strong) NSArray<SpecModel *> *specArray;
+@property (weak, nonatomic) IBOutlet UILabel *desLable;
 
 @end
 
@@ -23,7 +24,8 @@
     [super viewDidLoad];
 
     self.title = @"规格选择";
-
+    self.desLable.text = @"";
+    
     //测试数据
     [self testData];
     
@@ -39,6 +41,10 @@
     if (!_specView) {
         _specView = [[[NSBundle mainBundle]loadNibNamed:@"ProductSpecView" owner:nil options:nil] lastObject];
         _specView.frame = self.view.frame;
+        __weak typeof(self) weakSelf = self;
+        _specView.valueBlock = ^(NSString *name) {
+            [weakSelf.desLable setText:name];
+        };
     }
     return _specView;
 }

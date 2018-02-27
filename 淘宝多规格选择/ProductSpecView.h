@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "SpecModel.h"
 
+typedef void(^SelectedSpecName)(NSString *name);
+
 @interface ProductSpecView : UIView<UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (nonatomic, copy) SelectedSpecName valueBlock;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;

@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzC-Cn-TnB">
-                    <rect key="frame" x="0.0" y="667" width="375" height="450"/>
+                    <rect key="frame" x="0.0" y="217" width="375" height="450"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="轮播" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-LZ-315">
                             <rect key="frame" x="20" y="30" width="80" height="64"/>
@@ -126,7 +126,7 @@
             <constraints>
                 <constraint firstItem="KzC-Cn-TnB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7Ai-ax-Hsb"/>
                 <constraint firstItem="KzC-Cn-TnB" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="RXx-qG-iyk"/>
-                <constraint firstItem="KzC-Cn-TnB" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="450" id="ftX-GL-IyO"/>
+                <constraint firstItem="KzC-Cn-TnB" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ftX-GL-IyO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>

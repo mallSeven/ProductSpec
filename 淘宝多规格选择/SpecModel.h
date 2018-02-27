@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSArray<SpecListModel *> *list;
 
-@property (nonatomic, assign) NSInteger selRow; //默认值 999
+@property (nonatomic, assign) NSInteger selRow; //默认值 999(未选择规格)
 
 @end
 
